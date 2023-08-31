@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1 class="text-center mt-5 mb-3">Password Generator</h1>
+    <div class="main mx-auto item-center justify-center w-1/3 p-5 border relative">
+
+        <div class="flex border justify-between p-2">
+            <input type="text" placeholder="PASSWORD" disabled>
+            <button>Copy</button>
+        </div>
+
+        <div class="flex border justify-between p-2" >
+            <input id="range" class="w-[90%]" type="range" max="20" min="1" value="12">
+            <span id="passLength">8</span>
+        </div>
+
+        <div class="flex border gap-4 items-center p-2">
+            <input type="checkbox" name="" id="upper">
+            <p>Should contain upper letters</p>
+        </div>
+
+        <div class="flex border gap-4 items-center p-2">
+            <input type="checkbox" name="" id="lower">
+            <p>Should contain lower letters</p>
+        </div>
+
+        <div class="flex border gap-4 items-center p-2">
+            <input type="checkbox" name="" id="symbols">
+            <p>Should contain numbers</p>
+        </div>
+
+        <div class="flex border gap-4 items-center p-2">
+            <input type="checkbox" name="" id="specialChar">
+            <p>Should contain special characters</p>
+        </div>
+        
+        <div class="flex border gap-4 items-center p-2">
+            <button id="generate" class="rounded-md bg-green-500 px-3 py-1">Generate</button>
+            <div class="w-5 shadow-[0px_0px_10px_0px_red] h-5 rounded-full bg-[red]"></div>
+        </div>
+    </div>
+</body>
+</html>
