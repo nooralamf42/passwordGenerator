@@ -5,44 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="main.css">
+    <script src="https://kit.fontawesome.com/48da4c22b4.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <h1 class="text-center mt-5 mb-3">Password Generator</h1>
     <div class="main mx-auto item-center justify-center w-1/3 p-5 border relative">
 
         <div class="flex border justify-between p-2">
-            <input type="text" placeholder="PASSWORD" disabled>
-            <button>Copy</button>
+            <input type="text" placeholder="PASSWORD" disabled id="passDisplay">
+            <button onclick=copyToClipboard() id="copyBtn" class="hover:cursor-not-allowed">
+                <span id="copyText" class="text-xs mr-1 text-[#585858]">Copy</span>
+                <i class="fa-copy fa-solid text-[#8d8d8d]"></i>
+            </button>
         </div>
 
-        <div class="flex border justify-between p-2" >
-            <input id="range" class="w-[90%]" type="range" max="20" min="1" value="12">
-            <span id="passLength">8</span>
-        </div>
+        <div class="relative border">
+            <input id="range" class="-rotate-90 absolute -right-20 top-[7rem] accent-red-500" type="range" max="20" min="1" value="4">
+            <span id="passLength">4</span>
 
-        <div class="flex border gap-4 items-center p-2">
-            <input type="checkbox" name="" id="upper">
-            <label>Should contain upper letters</label>
-        </div>
+            <div class="flex gap-4 items-center p-2">
+                <input type="checkbox" name="" id="upper">
+                <label>Should contain upper letters</label>
+            </div>
 
-        <div class="flex border gap-4 items-center p-2">
-            <input type="checkbox" name="" id="lower">
-            <label>Should contain lower letters</label>
-        </div>
+            <div class="flex gap-4 items-center p-2">
+                <input type="checkbox" name="" id="lower">
+                <label>Should contain lower letters</label>
+            </div>
 
-        <div class="flex border gap-4 items-center p-2">
-            <input type="checkbox" name="" id="numbers">
-            <label>Should contain numbers</label>
-        </div>
+            <div class="flex gap-4 items-center p-2">
+                <input type="checkbox" name="" id="numbers">
+                <label>Should contain numbers</label>
+            </div>
 
-        <div class="flex border gap-4 items-center p-2">
-            <input type="checkbox" name="" id="specialChar">
-            <label>Should contain special characters</label>
-        </div>
-        
-        <div class="flex border gap-4 items-center p-2">
-            <button id="generate" class="rounded-md bg-green-500 px-3 py-1">Generate</button>
-            <div class="w-5 shadow-[0px_0px_10px_0px_red] h-5 rounded-full bg-[red]"></div>
+            <div class="flex gap-4 items-center p-2">
+                <input type="checkbox" name="" id="specialChar">
+                <label>Should contain special characters</label>
+            </div>
+            
+            <button id="generate" class="rounded-md px-3 py-1 bg-red-200" onclick=checkCheckBoxes()>Generate</button>
         </div>
     </div>
     <script src="app.js"></script>
